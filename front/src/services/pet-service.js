@@ -1,6 +1,6 @@
 import api from './api';
 
-function obterTodos(){
+function getAll(){
     return new Promise((resolve, reject) => {
         return api.get('/dogs')
         .then(response => resolve(response))
@@ -8,7 +8,7 @@ function obterTodos(){
     });
 }
 
-function obterPorId(id){
+function getById(id){
     return new Promise((resolve, reject) => {
         return api.get(`/dogs/${id}`)
         .then(response => resolve(response))
@@ -16,23 +16,23 @@ function obterPorId(id){
     });
 }
 
-function cadastrar(produto){
+function register(pet){
     return new Promise((resolve, reject) => {
-        return api.post(`/dogs`, produto)
+        return api.post(`/dogs`, pet)
         .then(response => resolve(response))
         .catch(error => reject(error));
     });
 }
 
-function atualizar(produto){
+function update(pet){
     return new Promise((resolve, reject) => {
-        return api.put(`/dogs/${produto.id}`, produto)
+        return api.put(`/dogs/${pet.id}`, pet)
         .then(response => resolve(response))
         .catch(error => reject(error));
     });
 }
 
-function deletar(id){
+function remove(id){
     return new Promise((resolve, reject) => {
         return api.delete(`/dogs/${id}`)
         .then(response => resolve(response))
@@ -42,9 +42,9 @@ function deletar(id){
 
 
 export default {
-    obterTodos,
-    obterPorId,
-    cadastrar,
-    atualizar,
-    deletar
+    getAll,
+    getById,
+    register,
+    update,
+    remove
 }

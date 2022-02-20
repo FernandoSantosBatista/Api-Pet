@@ -8,21 +8,21 @@
     </div>
 
     <div class="row mt-3">
-      <div v-for="produto in produtos" :key="produto.id">
+      <div v-for="item in pets" :key="item.id">
         <Card>
-          <template v-slot:nome> {{ produto.nome }} </template>
+          <template v-slot:nome> {{ item.name }} </template>
 
-          <template v-slot:valor> {{ produto.valor | real }} </template>
+          <template v-slot:valor> {{ item.valor | real }} </template>
 
-          <template v-slot:observacao> {{ produto.observacao }} </template>
+          <template v-slot:observacao> {{ item.observacao }} </template>
 
           <template v-slot:acoes>
             <i
-              @click="editarProduto(produto)"
+              @click="editarProduto(item)"
               class="fas fa-pencil-alt icones-tabela"
             ></i>
             <i
-              @click="excluirProduto(produto)"
+              @click="excluirProduto(item)"
               class="fas fa-trash-alt icones-tabela"
             ></i>
           </template>
@@ -34,7 +34,7 @@
 
 <script>
 import Card from "../components/card/Card.vue";
-import ProdutoMixin from "../mixins/produto-mixin";
+import ProdutoMixin from "../mixins/pet-mixin";
 
 export default {
   name: "ListaProdutoCards",

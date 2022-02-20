@@ -10,11 +10,11 @@ export default class Pet {
         this.logo = obj.logo
     }
 
-    modeloValidoParaCadastro(){
+    modelValidForRegistration(){
         return !!this.name;
     }
 
-    modeloValidoParaAtualizar(){
+    modelValidToUpdate(){
         return !! (this.id && this.name)
     }
 }

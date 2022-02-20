@@ -3,7 +3,7 @@ import Produto from "../models/Pet";
 import conversorMonetario from "../utils/conversor-monetario";
 import conversorDeData from "../utils/conversor-data";
 
-let ProdutoMixin = {
+let PetMixin = {
     filters: {
         data(data) {
           return conversorDeData.aplicarMascaraEmDataIso(data);
@@ -40,7 +40,7 @@ let ProdutoMixin = {
           }).then((result) => {
             if (result.isConfirmed) {
               produtoService
-                .deletar(produto.id)
+                .remove(produto.id)
                 .then(() => {
                   let indice = this.pets.findIndex((p) => p.id == produto.id);
                   this.pets.splice(indice, 1);
@@ -68,7 +68,7 @@ let ProdutoMixin = {
     
         obterTodosOsProdutos() {
           produtoService
-            .obterTodos()
+            .getAll()
             .then((response) => {
               let pets = response.data.map((p) => new Produto(p));
               this.pets = pets.reverse();
@@ -80,4 +80,4 @@ let ProdutoMixin = {
     },
 }
 
-export default ProdutoMixin;
+export default PetMixin;

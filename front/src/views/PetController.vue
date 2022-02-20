@@ -2,17 +2,17 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="titulo">Produtos</h2>
+        <h2 class="titulo">Pets</h2>
         <hr />
       </div>
     </div>
 
     <div class="row sub-cointainer">
       <div class="col-sm-2">
-        <Button :callback="adicionarProduto" value="Adicionar"></Button>
+        <Button :callback="addPet" value="Adicionar"></Button>
       </div>
       <div class="col-sm-10">
-        <a @click="verProdutosEmCards" class="float-right ver-em-cards"> Ver em cards</a>
+        <a @click="seePetsInCards" class="float-right ver-em-cards"> Ver em cards</a>
       </div>
     </div>
 
@@ -64,11 +64,11 @@
 </template>
 <script>
 import Button from "../components/button/Button.vue";
-import ProdutoMixin from '../mixins/produto-mixin';
+import PetMixin from '../mixins/pet-mixin';
 
 export default {
   name: "PetController",
-  mixins:[ProdutoMixin],
+  mixins:[PetMixin],
   components: {
     Button,
   },
@@ -79,12 +79,12 @@ export default {
   },
 
   methods: {
-    verProdutosEmCards(){
-      this.$router.push({ name: "ListaProdutoCards" });
+    seePetsInCards(){
+      this.$router.push({ name: "ListPetCards" });
     },
 
-    adicionarProduto() {
-      this.$router.push({ name: "NovoProduto" });
+    addPet() {
+      this.$router.push({ name: "NewPet" });
     }
   },
 };

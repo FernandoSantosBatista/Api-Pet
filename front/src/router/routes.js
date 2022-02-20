@@ -36,7 +36,7 @@ const routes = [
     },
     {
         path: '/controle-de-produtos/novo',
-        name: 'NovoProduto',
+        name: 'NewPet',
         component: Produto,
         title: 'Adicionar produto',
         meta: { requiredAuth: true }
@@ -50,7 +50,7 @@ const routes = [
     },
     {
         path: '/controle-de-produtos/lista-cards',
-        name: 'ListaProdutoCards',
+        name: 'ListPetCards',
         component: ListaProdutoCards,
         title: 'Lista de produtos em cards',
         meta: { requiredAuth: true }

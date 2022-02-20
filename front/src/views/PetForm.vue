@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="titulo">{{ modoCadastro ? "Adicionar" : "Editar" }} Pet</h1>
+        <h1 class="titulo">{{ registrationMode ? "Adicionar" : "Editar" }} Pet</h1>
         <hr />
       </div>
     </div>
@@ -68,17 +68,17 @@
       </div>
 
       <div class="col-sm-12">
-        <div v-show="modoCadastro" class="form-check-inline">
+        <div v-show="registrationMode" class="form-check-inline">
           <label class="form-check-label">
-            <input v-model="continuarAdicionando"  type="checkbox" class="form-check-input"  />
+            <input v-model="continueAdding"  type="checkbox" class="form-check-input"  />
             Continuar adicionando
           </label>
         </div>
 
-        <button  @click="cancelarAcao" class="btn btn-default float-right" type="button">
+        <button  @click="cancelAction" class="btn btn-default float-right" type="button">
           Cancelar
         </button>
-        <button @click="salvarProduto" class="btn btn-primary float-right mr-2" type="button">
+        <button @click="save" class="btn btn-primary float-right mr-2" type="button">
           Salvar
         </button>
       </div>
@@ -90,7 +90,6 @@
 
 import Pet from '../models/Pet';
 import petService from '../services/pet-service';
-import conversorDeData from "../utils/conversor-data";
 
 export default {
     name:"PetForm",
@@ -98,20 +97,20 @@ export default {
         return {
 
             pet: new Pet(),
-            modoCadastro: true,
-            continuarAdicionando: false,
+            registrationMode: true,
+            continueAdding: false,
         }
     },
     mounted(){
         let id = this.$route.params.id;
         if(!id) return;
 
-        this.modoCadastro = false;
-        this.obterProdutoPorId(id);
+        this.registrationMode = false;
+        this.getProductById(id);
     },
     methods:{
-        obterProdutoPorId(id){
-            petService.obterPorId(id)
+        getProductById(id){
+            petService.getById(id)
             .then(response => {
                 this.pet = new Pet(response.data);
             })
@@ -126,12 +125,12 @@ export default {
             })
         },
 
-        cancelarAcao(){
+        cancelAction(){
             this.pet = new Pet();
             this.$router.push({name: "ControleDeProdutos"})
         },
-        codastrarProduto(){
-            if(!this.pet.modeloValidoParaCadastro()){
+        registerPet(){
+            if(!this.pet.modelValidForRegistration()){
                 this.$swal({
                   icon: 'warning',
                   title: 'O nome do produto é obrigatório para o cadastro.',
@@ -141,21 +140,18 @@ export default {
                 return;
             }
 
-            this.pet.dataCadastro = 
-                conversorDeData.aplicarMascaraISOEmFormatoAmericano(this.pet.dataCadastro);
-        
-            petService.cadastrar(this.pet)
+            petService.register(this.pet)
             .then(() => {
                 this.$swal({
                   icon: 'success',
-                  title: 'Produto cadastrado com sucesso!',
+                  title: 'Pet cadastrado com sucesso!',
                   confirmButtonColor: '#FF3D00',
                   animate: true
                 });
 
                 this.pet = new Pet();
 
-                if(!this.continuarAdicionando){
+                if(!this.continueAdding){
                     this.$router.push({name: "ControleDeProdutos"})
                 }
             })
@@ -170,8 +166,8 @@ export default {
             });
         },
 
-        atualizarProduto(){
-            if(!this.pet.modeloValidoParaAtualizar()){
+        updatePet(){
+            if(!this.pet.modelValidToUpdate()){
                 this.$swal({
                   icon: 'warning',
                   title: 'O código e nome do pet são obrigatórios para o cadastro.',
@@ -181,14 +177,13 @@ export default {
                 return;
             }
             
-            this.pet.dataCadastro = 
-                conversorDeData.aplicarMascaraISOEmFormatoAmericano(this.pet.dataCadastro);
+            
 
-            petService.atualizar(this.pet)
+            petService.update(this.pet)
             .then(() =>{
                 this.$swal({
                   icon: 'success',
-                  title: 'Produto atualizado com sucesso!',
+                  title: 'Pet atualizado com sucesso!',
                   confirmButtonColor: '#FF3D00',
                   animate: true
                 });
@@ -198,15 +193,15 @@ export default {
                 console.log(error);
                 this.$swal({
                   icon: 'error',
-                  title: 'Não foi possível atualizar o produto',
+                  title: 'Não foi possível atualizar o pet',
                   confirmButtonColor: '#FF3D00',
                   animate: true
                 });
             });
         },
 
-        salvarProduto(){
-            (this.modoCadastro) ? this.codastrarProduto() : this.atualizarProduto();
+        save(){
+            (this.registrationMode) ? this.registerPet() : this.updatePet();
         },
 
         onFileChange(e){
