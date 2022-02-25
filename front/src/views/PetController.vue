@@ -45,11 +45,11 @@
             </td>
               <td>
                 <i
-                  @click="editarProduto(item)"
+                  @click="editPets(item)"
                   class="fas fa-pencil-alt icones-tabela"
                 ></i>
                 <i
-                  @click="excluirProduto(item)"
+                  @click="removePet(item)"
                   class="fas fa-trash-alt icones-tabela"
                 ></i>
               </td>

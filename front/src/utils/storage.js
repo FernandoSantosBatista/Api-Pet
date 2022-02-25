@@ -1,4 +1,4 @@
-import Usuario from "../models/Usuario";
+import Usuario from "../models/User";
 
 function salvarUsuarioNaStorage(usuario){
     let usuarioString = JSON.stringify(usuario);

@@ -7,6 +7,14 @@ function login(email, password){
     });
 }
 
+function register(pet){
+    return new Promise((resolve, reject) => {
+        return api.post(`/users`, pet)
+        .then(response => resolve(response))
+        .catch(error => reject(error));
+    });
+}
+
 function logout(){
     return new Promise((resolve, reject) => {
         return api.delete(`/logout`)
@@ -15,15 +23,8 @@ function logout(){
     });
 }
 
-function obterTodos(){
-    return new Promise((resolve, reject) => {
-        return api.get(`/users`)
-        .then(response => resolve(response))
-        .catch(error => reject(error));
-    });
-}
 
-function obterPorId(id){
+function getById(id){
     return new Promise((resolve, reject) => {
         return api.get(`/users/${id}`)
         .then(response => resolve(response))
@@ -34,6 +35,6 @@ function obterPorId(id){
 export default {
     login,
     logout,
-    obterTodos,
-    obterPorId
+    getById,
+    register
 }

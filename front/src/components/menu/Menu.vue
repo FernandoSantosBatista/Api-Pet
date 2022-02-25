@@ -4,10 +4,10 @@
             <a @click="() => this.$router.push({path:'/'})">Dashboard</a>
         </li>
         <li>
-            <a @click="() => this.$router.push({path:'/controle-de-produtos'})">Produtos</a>
+            <a @click="() => this.$router.push({path:'/gerenciamento-de-pets'})">Pets</a>
         </li>
         <li>
-            <a @click="() => this.$router.push({path:'/controle-de-clientes'})">Clientes</a>
+            <a @click="() => this.$router.push({path:'/gerenciamento-de-usuarios'})">Usuario</a>
         </li>
         <li>
             <a @click="logout">Sair</a>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import usuarioService from '../../services/usuario-service';
+import usuarioService from '../../services/user-service';
 import utilsStorage from '../../utils/storage';
 
 export default {
@@ -49,7 +49,7 @@ export default {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: var(--cor-primaria);
+        background: linear-gradient(to right, #1e469a, #49a7c1);
     }
 
     li {
@@ -75,7 +75,8 @@ export default {
     }
 
     li a:hover{
-        background-color: var(--cor-secundaria);
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.2);
     }
 
 </style>

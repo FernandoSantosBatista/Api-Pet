@@ -127,7 +127,7 @@ export default {
 
         cancelAction(){
             this.pet = new Pet();
-            this.$router.push({name: "ControleDeProdutos"})
+            this.$router.push({name: "PetController"})
         },
         registerPet(){
             if(!this.pet.modelValidForRegistration()){
@@ -152,7 +152,7 @@ export default {
                 this.pet = new Pet();
 
                 if(!this.continueAdding){
-                    this.$router.push({name: "ControleDeProdutos"})
+                    this.$router.push({name: "PetController"})
                 }
             })
             .catch(error =>{
@@ -187,7 +187,7 @@ export default {
                   confirmButtonColor: '#FF3D00',
                   animate: true
                 });
-                this.$router.push({name: "ControleDeProdutos"});
+                this.$router.push({name: "PetController"});
             })
             .catch(error => {
                 console.log(error);

@@ -1,9 +1,9 @@
 import Login from '@/views/Login.vue'
 import Dashboard from '@/views/Dashboard.vue'
-import ControleDeClientes from '@/views/ControleDeClientes.vue'
-import ControleDeProdutos from '@/views/PetController.vue'
+import UserForm from '@/views/UserForm.vue'
+import PetController from '@/views/PetController.vue'
 import ListaProdutoCards from '@/views/ListaProdutoCards.vue'
-import Produto from '@/views/PetForm.vue'
+import Pet from '@/views/PetForm.vue'
 
 const routes = [
     {
@@ -21,38 +21,38 @@ const routes = [
         meta: { requiredAuth: true }
     },
     {
-        path: '/controle-de-clientes',
-        name: 'ControleDeClientes',
-        component: ControleDeClientes,
-        title: 'Clientes',
+        path: '/gerenciamento-de-usuarios',
+        name: 'UserForm',
+        component: UserForm,
+        title: 'Usuarios',
         meta: { requiredAuth: true }
     },
     {
-        path: '/controle-de-produtos',
-        name: 'ControleDeProdutos',
-        component: ControleDeProdutos,
-        title: 'Produtos',
+        path: '/gerenciamento-de-pets',
+        name: 'PetController',
+        component: PetController,
+        title: 'Pets',
         meta: { requiredAuth: true }
     },
     {
-        path: '/controle-de-produtos/novo',
+        path: '/gerenciamento-de-pets/novo',
         name: 'NewPet',
-        component: Produto,
-        title: 'Adicionar produto',
+        component: Pet,
+        title: 'Adicionar Pet',
         meta: { requiredAuth: true }
     },
     {
-        path: '/controle-de-produtos/editar',
-        name: 'EditarProduto',
-        component: Produto,
-        title: 'Editar produto',
+        path: '/gerenciamento-de-pets/editar',
+        name: 'EditPet',
+        component: Pet,
+        title: 'Editar pet',
         meta: { requiredAuth: true }
     },
     {
-        path: '/controle-de-produtos/lista-cards',
+        path: '/gerenciamento-de-pets/lista-cards',
         name: 'ListPetCards',
         component: ListaProdutoCards,
-        title: 'Lista de produtos em cards',
+        title: 'Lista de Pets em cards',
         meta: { requiredAuth: true }
     },
 ];

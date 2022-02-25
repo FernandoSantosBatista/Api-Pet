@@ -25,8 +25,8 @@
 <script>
 import Input from '../components/input/Input.vue';
 import Button from '../components/button/Button.vue';
-import Usuario from '../models/Usuario';
-import usuarioService from '../services/usuario-service';
+import Usuario from '../models/User';
+import usuarioService from '../services/user-service';
 import utilsStorage from '../utils/storage';
 
 export default {
@@ -64,7 +64,7 @@ export default {
         utilsStorage.salvarUsuarioNaStorage(this.usuario);
         utilsStorage.salvarTokenNaStorage(response.data.token);
         
-        this.$router.push({name: "ControleDeProdutos"});
+        this.$router.push({name: "PetController"});
       })
       .catch(error => {
         console.log(error);
