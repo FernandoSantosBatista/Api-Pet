@@ -112,7 +112,6 @@ export default {
 </script>
 
 <style scoped>
-
   .box-register {
     width: 400px;
     margin: auto;

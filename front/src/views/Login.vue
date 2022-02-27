@@ -1,4 +1,7 @@
 <template>
+<body>
+  
+
     <div class="box-login">
 
         <div class="logo">
@@ -13,14 +16,15 @@
         
         <Input
           label="Senha"
-          placeHolder="123456"
           type="password"
+          placeHolder="******"
           v-model="usuario.password"
         ></Input>
 
         <Button value="Entrar" :callback="login"></Button>
         
     </div>
+    </body>
 </template>
 <script>
 import Input from '../components/input/Input.vue';
@@ -74,7 +78,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
+body{
+  background-image: url("https://assets.mydogsname.com/wp-content/uploads/2018/06/best-outdoor-dog-toys-chuck-it");
+  ;}
 
   .box-login {
     width: 300px;

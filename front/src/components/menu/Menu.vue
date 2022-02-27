@@ -10,7 +10,7 @@
             <a @click="() => this.$router.push({path:'/gerenciamento-de-usuarios'})">Usuario</a>
         </li>
         <li>
-            <a @click="logout">Sair</a>
+            <a @click="logout"> Sair</a>
         </li>
     </ul>
 </template>
@@ -49,7 +49,7 @@ export default {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background: linear-gradient(to right, #1e469a, #49a7c1);
+        background: linear-gradient(to right, #0039A8, #296CDB);
     }
 
     li {

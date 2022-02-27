@@ -1,62 +1,79 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
+
+  <div class="container col-sm-5 ">
+    <div class="row " >
+      <div class="col-sm-10">
         <h1 class="titulo">{{ registrationMode ? "Adicionar" : "Editar" }} Pet</h1>
         <hr />
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-5">
         <div class="form-group">
           <label for="id">Código</label>
           <input id="id" v-model="pet.id" type="text" disabled class="form-control" />
         </div>
       </div>
 
-      <div class="col-sm-10">
+      <div class="col-sm-5">
         <div class="form-group">
           <label for="name">Nome</label>
           <input id="name" v-model="pet.name" type="text" class="form-control" />
         </div>
       </div>
  
-      <div class="col-sm-3">
+      <div class="col-sm-5">
         <div class="form-group">
           <label for="species">Especies</label>
-          <input id="species" v-model="pet.species" type="text" class="form-control" />
+          <select v-model="pet.species" id="size" class="form-control">
+              <option selected>Cachorro</option>
+              <option>Gato</option>
+            </select>
         </div>
       </div>
-     <div class="col-sm-3">
+
+     <div class="col-sm-5">
         <div class="form-group">
           <label for="sex">Sexo</label>
-          <input id="sex" v-model="pet.sex" type="text" class="form-control" />
+          <select v-model="pet.sex" id="size" class="form-control">
+              <option selected>Masculino</option>
+              <option>Feminino</option>
+            </select>
         </div>
       </div>
-      <div class="col-sm-3">
+
+      <div class="col-sm-5">
         <div class="form-group">
           <label for="age">Idade</label>
-          <input id="age" v-model="pet.age" type="text" class="form-control" />
+          <select v-model="pet.age" id="size" class="form-control">
+              <option selected>Adulto</option>
+              <option>Filhote</option>
+            </select>
         </div>
       </div>
-      <div class="col-sm-12">
+      
+      <div class="col-sm-5">
         <div class="form-group">
-          <label for="observacao">Tamanho</label>
-            <input id="age" v-model="pet.size" type="text" class="form-control" />
+          <label for="size">Tamanho</label>
+            <select v-model="pet.size" id="size" class="form-control">
+              <option selected>Grande</option>
+              <option>Médio</option>
+              <option>Pequeno</option>
+            </select>
         </div>
       </div>
     
-      <div class="col-sm-12">
+      <div class="col-sm-10">
         <div class="form-group">
-          <label for="observacao">Upload</label>
+          <label class="fas fa-cloud-upload-alt" for="image">Upload</label>
           <input type="file" @change="onFileChange" class="form-control" />
         </div>
       </div>
 
-      <div class="col-sm-12">
+      <div class="col-sm-8">
         <div class="form-group">
-          <label for="observacao"></label>
+          <label for="image"></label>
           <img :src="pet.logo" class="img-responsive" height="100" width="100"/>
         </div>
       </div>
@@ -67,7 +84,7 @@
         <hr />
       </div>
 
-      <div class="col-sm-12">
+      <div class="col-sm-10">
         <div v-show="registrationMode" class="form-check-inline">
           <label class="form-check-label">
             <input v-model="continueAdding"  type="checkbox" class="form-check-input"  />
@@ -220,7 +237,9 @@ export default {
 </script>
 
 <style scoped>
-textarea {
-  resize: none;
+.container{
+    padding: 40px;
+
 }
+
 </style>
