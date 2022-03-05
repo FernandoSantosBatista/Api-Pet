@@ -1,7 +1,4 @@
 <template>
-<body>
-  
-
     <div class="box-login">
 
         <div class="logo">
@@ -11,7 +8,7 @@
         <Input
           label="E-mail"
           placeHolder="exemplo@exemplo.com"
-          v-model="usuario.email"
+          v-model="usuario.email" 
         ></Input>
         
         <Input
@@ -24,7 +21,6 @@
         <Button value="Entrar" :callback="login"></Button>
         
     </div>
-    </body>
 </template>
 <script>
 import Input from '../components/input/Input.vue';
@@ -54,7 +50,7 @@ export default {
         this.$swal({
             icon: "warning",
             title: "Email e senha são obrigatórios.",
-            confirmButtonColor: "#FF3D00",
+            confirmButtonColor: "#0039A8",
             animate: true
           })
         return;
@@ -79,9 +75,7 @@ export default {
 </script>
 
 <style >
-body{
-  background-image: url("https://assets.mydogsname.com/wp-content/uploads/2018/06/best-outdoor-dog-toys-chuck-it");
-  ;}
+
 
   .box-login {
     width: 300px;

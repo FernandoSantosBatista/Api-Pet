@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="title col-sm-12">
+      <div class="title col-sm-10">
         <h2 class="title00">Pets</h2>
         <hr />
       </div>
@@ -11,13 +11,13 @@
       <div class="col-sm-2">
         <Button :callback="addPet" value="Adicionar"></Button>
       </div>
-      <div class="col-sm-10">
-        <a @click="seePetsInCards" class="float-right ver-em-cards"> Ver em cards</a>
+      <div class="col-sm-8">
+        <a @click="seePetsInCards" class="float-end ver-em-cards"> Home </a>
       </div>
     </div>
 
     <div class="row">
-      <div class="table-responsive col-sm-12">
+      <div class="table-responsive col-sm-11">
         <table class="table table-hover table-borderless ">
           <thead>
             <tr>
@@ -78,7 +78,7 @@ export default {
 
   methods: {
     seePetsInCards(){
-      this.$router.push({ name: "ListPetCards" });
+      this.$router.push({ name: "Dashboard" });
     },
 
     addPet() {
@@ -88,7 +88,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .edit {
   color: #090753;
   cursor: pointer;
@@ -108,6 +107,7 @@ export default {
 
 .title{
   padding: 5px;
+  color: #212F36;
 }
 
 .table{

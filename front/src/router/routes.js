@@ -2,8 +2,9 @@ import Login from '@/views/Login.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import UserForm from '@/views/UserForm.vue'
 import PetController from '@/views/PetController.vue'
-import ListaProdutoCards from '@/views/ListaProdutoCards.vue'
+import AdopterController from '@/views/AdopterController.vue'
 import Pet from '@/views/PetForm.vue'
+import Adopter from '@/views/AdopterForm.vue'
 
 const routes = [
     {
@@ -48,11 +49,26 @@ const routes = [
         title: 'Editar pet',
         meta: { requiredAuth: true }
     },
+
     {
-        path: '/gerenciamento-de-pets/lista-cards',
-        name: 'ListPetCards',
-        component: ListaProdutoCards,
-        title: 'Lista de Pets em cards',
+        path: '/gerenciamento-de-adotantes',
+        name: 'AdopterController',
+        component: AdopterController,
+        title: 'Adopters',
+        meta: { requiredAuth: true }
+    },
+    {
+        path: '/gerenciamento-de-adotantes/novo',
+        name: 'NewAdopter',
+        component: Adopter,
+        title: 'Adicionar Pet',
+        meta: { requiredAuth: true }
+    },
+    {
+        path: '/gerenciamento-de-adotantes/editar',
+        name: 'EditAdopter',
+        component: Adopter,
+        title: 'Editar adopter',
         meta: { requiredAuth: true }
     },
 ];

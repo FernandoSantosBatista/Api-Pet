@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <Menu v-if="this.$router.currentRoute.name != 'Login'"></Menu>
+    
     <router-view/>
+    <Footer v-if="this.$router.currentRoute.name != 'Login'"></Footer>
   </div>
 </template>
 <script>
 
 import Menu from "@/components/menu/Menu.vue";
+import Footer from "@/components/footer/Footer.vue";
 
 export default {
   components:{
-    Menu
+    Menu,
+    Footer
   }
 }
 </script>

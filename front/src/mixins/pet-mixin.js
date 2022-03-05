@@ -27,7 +27,7 @@ let PetMixin = {
             title: "Deseja excluir o pet?",
             text: `Código: ${pet.id} - Nome: ${pet.name}`,
             showCancelButton: true,
-            confirmButtonColor: "#FF3D00",
+            confirmButtonColor: "#0039A8",
             confirmButtonText: "Sim",
             cancelButtonText: "Não",
             animate: true,
@@ -42,7 +42,7 @@ let PetMixin = {
                     this.$swal({
                       icon: 'success',
                       title: 'Pet deletado com sucesso!',
-                      confirmButtonColor: '#FF3D00',
+                      confirmButtonColor: '#0039A8',
                       animate: true
                     });
                 })

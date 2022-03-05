@@ -17,7 +17,7 @@ router.beforeEach((to, from, next) => {
   if(to.name == "Login"){
 
     if(token){
-      next({name: 'ControleDeProdutos'});
+      next({name: 'PetController'});
 
     }else {
       next();
@@ -39,7 +39,7 @@ router.beforeEach((to, from, next) => {
       next();
 
     }else{
-      next({name: 'ControleDeProdutos'})
+      next({name: 'PetController'});
     }
   }
 

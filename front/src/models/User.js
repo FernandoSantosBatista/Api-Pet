@@ -2,7 +2,7 @@ export default class Usuario {
     constructor(obj){
         obj = obj || {};
         this.id = obj.id;
-        this.nome = obj.nome;
+        this.name = obj.name;
         this.email = obj.email;
         this.password = obj.password;
     }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class=" d-md-block" @click="callback"> {{value}}</button>
+        <button class="d-md-block" @click="callback"> {{value}}</button>
     </div>
 </template>
 <script>

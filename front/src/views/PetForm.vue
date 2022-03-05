@@ -11,21 +11,21 @@
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="id">Código</label>
+          <label class="form-label" for="id">Código</label>
           <input id="id" v-model="pet.id" type="text" disabled class="form-control" />
         </div>
       </div>
 
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="name">Nome</label>
+          <label class="form-label" for="name">Nome</label>
           <input id="name" v-model="pet.name" type="text" class="form-control" />
         </div>
       </div>
  
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="species">Especies</label>
+          <label class="form-label" for="species">Especies</label>
           <select v-model="pet.species" id="size" class="form-control">
               <option selected>Cachorro</option>
               <option>Gato</option>
@@ -35,7 +35,7 @@
 
      <div class="col-sm-5">
         <div class="form-group">
-          <label for="sex">Sexo</label>
+          <label class="form-label" for="sex">Sexo</label>
           <select v-model="pet.sex" id="size" class="form-control">
               <option selected>Masculino</option>
               <option>Feminino</option>
@@ -45,7 +45,7 @@
 
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="age">Idade</label>
+          <label class="form-label" for="age">Idade</label>
           <select v-model="pet.age" id="size" class="form-control">
               <option selected>Adulto</option>
               <option>Filhote</option>
@@ -55,7 +55,7 @@
       
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="size">Tamanho</label>
+          <label class="form-label" for="size">Tamanho</label>
             <select v-model="pet.size" id="size" class="form-control">
               <option selected>Grande</option>
               <option>Médio</option>
@@ -136,7 +136,7 @@ export default {
                 this.$swal({
                   icon: 'error',
                   title: 'Não foi possível obter o produto pelo id ' + id,
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
             })
@@ -151,7 +151,7 @@ export default {
                 this.$swal({
                   icon: 'warning',
                   title: 'O nome do produto é obrigatório para o cadastro.',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
                 return;
@@ -162,7 +162,7 @@ export default {
                 this.$swal({
                   icon: 'success',
                   title: 'Pet cadastrado com sucesso!',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
 
@@ -177,7 +177,7 @@ export default {
                 this.$swal({
                   icon: 'error',
                   title: 'Não foi possível cadastrar o produto',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
             });
@@ -188,7 +188,7 @@ export default {
                 this.$swal({
                   icon: 'warning',
                   title: 'O código e nome do pet são obrigatórios para o cadastro.',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
                 return;
@@ -201,7 +201,7 @@ export default {
                 this.$swal({
                   icon: 'success',
                   title: 'Pet atualizado com sucesso!',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
                 this.$router.push({name: "PetController"});
@@ -211,7 +211,7 @@ export default {
                 this.$swal({
                   icon: 'error',
                   title: 'Não foi possível atualizar o pet',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
             });

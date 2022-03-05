@@ -72,7 +72,7 @@ export default {
                 this.$swal({
                   icon: 'warning',
                   title: 'O nome do usuario é obrigatório para o cadastro.',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
                 return;
@@ -83,7 +83,7 @@ export default {
                 this.$swal({
                   icon: 'success',
                   title: 'Usuario cadastrado com sucesso!',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
 
@@ -98,7 +98,7 @@ export default {
                 this.$swal({
                   icon: 'error',
                   title: 'Não foi possível cadastrar o Usuario',
-                  confirmButtonColor: '#FF3D00',
+                  confirmButtonColor: '#0039A8',
                   animate: true
                 });
             });

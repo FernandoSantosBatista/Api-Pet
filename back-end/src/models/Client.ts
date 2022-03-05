@@ -4,7 +4,6 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  Generated,
 } from 'typeorm';
 
 @Entity('clients')
@@ -15,20 +14,14 @@ class Client {
   @Column()
   name: string;
 
-  @Column({
-    unique: true,
-  })
+  @Column()
   email: string;
 
   @Column()
   telephone: string;
 
   @Column()
-  cpf: string;
-
-  @Column()
-  @Generated('uuid')
-  code: string;
+  description: string;
 
   @CreateDateColumn()
   created_at: Date;

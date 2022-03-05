@@ -1,18 +1,28 @@
 <template>
-    <ul class="menu">
-        <li>
-            <a @click="() => this.$router.push({path:'/'})">Dashboard</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">PET</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link to="/" class="nav-item text-white nav-link">Home</router-link>
         </li>
-        <li>
-            <a @click="() => this.$router.push({path:'/gerenciamento-de-pets'})">Pets</a>
+        <li class="nav-item">
+          <router-link to="/gerenciamento-de-pets" class="nav-item text-white nav-link">Pets</router-link>
         </li>
-        <li>
-            <a @click="() => this.$router.push({path:'/gerenciamento-de-usuarios'})">Usuario</a>
+        <li class="nav-item">
+          <router-link to="/gerenciamento-de-usuarios" class="nav-item text-white  nav-link">Usuarios</router-link>
         </li>
-        <li>
-            <a @click="logout"> Sair</a>
+        <li class="nav-item">
+          <router-link to="/gerenciamento-de-adotantes" class="nav-item text-white nav-link">Adotantes</router-link>
         </li>
-    </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
 </template>
 
 <script>
@@ -42,41 +52,10 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style  scoped >
+.navbar {
+    background: linear-gradient(to right, #0039A8, #296CDB);
+}
 
-    ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background: linear-gradient(to right, #0039A8, #296CDB);
-    }
-
-    li {
-        float: left;
-    }
-
-    li:first-child{
-        margin-left: 40px;
-    }
-
-    li:last-child{
-        float: right;
-        margin-right: 10px;
-    }
-
-    ul.menu li a {
-        display: block;
-        color: #FFF;
-        padding: 15px 17px;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    li a:hover{
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
 
 </style>
