@@ -2,6 +2,8 @@
   "name": "fundamentos-vue",
   "version": "0.1.0",
   "private": true,
+  "postinstall": "npm run build",
+  "start": "node server.js",
   "scripts": {
     "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
