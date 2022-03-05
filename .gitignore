@@ -1,0 +1,9 @@
+.idea/
+.vscode/
+node_modules/
+temp/
+.env
+coverage
+
+uploads/*
+!uploads/.gitkeep
