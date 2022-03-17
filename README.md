@@ -1,4 +1,4 @@
-Front end and back end rest application, pet registration system plus authentication and registration of new users
+Front end and back end RestFull application, pet registration system plus authentication and registration of new users
 
 run frontend
 
