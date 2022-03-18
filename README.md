@@ -1,7 +1,7 @@
 Front end and back end RestFull application, pet registration system plus authentication and registration of new users
 
 Project setup
-Front-end
+front-end
 
 npm install
 
@@ -16,6 +16,15 @@ npm run build
 Lints and fixes files
 
 npm run lint
+
+Project setup
+back-end
+
+npm i
+
+npm rum dev
+
+server Port :3000
 
 
 
