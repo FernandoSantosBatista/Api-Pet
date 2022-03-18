@@ -1,18 +1,21 @@
 Front end and back end RestFull application, pet registration system plus authentication and registration of new users
 
-run frontend
+Project setup
+Front-end
 
-npm i
+npm install
 
-npm run server
+Compiles and hot-reloads for development
+
+npm run serve
+
+Compiles and minifies for production
 
 npm run build
 
-run backend port 3000
+Lints and fixes files
 
-npm i
-
-npm run dev
+npm run lint
 
 
 
