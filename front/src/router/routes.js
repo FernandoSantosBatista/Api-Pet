@@ -47,7 +47,7 @@ const routes = [
         name: 'EditPet',
         component: Pet,
         title: 'Editar pet',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
 
     {
