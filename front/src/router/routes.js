@@ -26,7 +26,7 @@ const routes = [
         name: 'UserForm',
         component: UserForm,
         title: 'Usuarios',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
     {
         path: '/gerenciamento-de-pets',
@@ -40,7 +40,7 @@ const routes = [
         name: 'NewPet',
         component: Pet,
         title: 'Adicionar Pet',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
     {
         path: '/gerenciamento-de-pets/editar',
@@ -55,21 +55,21 @@ const routes = [
         name: 'AdopterController',
         component: AdopterController,
         title: 'Adopters',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
     {
         path: '/gerenciamento-de-adotantes/novo',
         name: 'NewAdopter',
         component: Adopter,
         title: 'Adicionar Pet',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
     {
         path: '/gerenciamento-de-adotantes/editar',
         name: 'EditAdopter',
         component: Adopter,
         title: 'Editar adopter',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
 ];
 
