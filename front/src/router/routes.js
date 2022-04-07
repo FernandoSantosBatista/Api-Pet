@@ -19,7 +19,7 @@ const routes = [
         name: 'Dashboard',
         component: Dashboard,
         title: 'Dashboard',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
     {
         path: '/gerenciamento-de-usuarios',
