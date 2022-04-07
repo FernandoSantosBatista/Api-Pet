@@ -2,7 +2,7 @@ import axios from "axios";
 import utilsStorage from '../utils/storage';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000/api/v1'
+    baseURL: 'https://apipetbackend.herokuapp.com/api/v1'
 });
 
 api.interceptors.request.use((config) => {
