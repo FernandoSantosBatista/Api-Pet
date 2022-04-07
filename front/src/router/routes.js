@@ -33,7 +33,7 @@ const routes = [
         name: 'PetController',
         component: PetController,
         title: 'Pets',
-        meta: { requiredAuth: true }
+        meta: { requiredAuth: false }
     },
     {
         path: '/gerenciamento-de-pets/novo',
