@@ -43,14 +43,12 @@
               <td>{{item.size}}</td>
               
               <td>
-                <i
-                  @click="editPets(item)"
-                  class="fas fa-pencil-alt edit"
-                ></i>
-                <i
-                  @click="removePet(item)"
-                  class="fas fa-trash-alt remove"
-                ></i>
+                <button  @click="editPets(item)" class="btn btn-default float-right" type="button">
+                 Editar
+                </button>
+                <button @click="removePet(item)" class="btn btn-primary float-right mr-2" type="button">
+                 Excluir
+                </button>
               </td>
               </tr>
             </tbody>
